@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ReceiptSnap - Batch History</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f5",
+                        "tertiary-fixed": "#9ff2e0",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#576670",
+                        "on-primary-fixed": "#001f2a",
+                        "secondary-container": "#d5e5f1",
+                        "secondary-fixed-dim": "#b9c9d4",
+                        "secondary": "#51606a",
+                        "outline-variant": "#bfc8cd",
+                        "tertiary-fixed-dim": "#83d6c4",
+                        "on-secondary-fixed": "#0e1d26",
+                        "primary-fixed": "#bee9ff",
+                        "outline": "#70787e",
+                        "tertiary-container": "#006a5c",
+                        "tertiary": "#005045",
+                        "primary-container": "#006684",
+                        "background": "#f8fafb",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#3f484d",
+                        "inverse-on-surface": "#eff1f2",
+                        "surface-tint": "#016684",
+                        "surface-dim": "#d8dadb",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-primary-fixed-variant": "#004d64",
+                        "on-tertiary-fixed-variant": "#005046",
+                        "surface-bright": "#f8fafb",
+                        "on-secondary-fixed-variant": "#3a4952",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "on-error": "#ffffff",
+                        "surface": "#f8fafb",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#d5e5f1",
+                        "on-background": "#191c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-container": "#94e7d5",
+                        "surface-container": "#eceeef",
+                        "primary": "#004d64",
+                        "inverse-primary": "#87d0f2",
+                        "surface-container-high": "#e6e8e9",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#87d0f2",
+                        "on-primary-container": "#a2e1ff",
+                        "on-tertiary-fixed": "#00201b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopAppBar -->
+    <header class="w-full top-0 z-50 sticky bg-[#f8fafb] dark:bg-slate-900 flex items-center justify-between px-6 py-4">
+        <div class="flex items-center gap-4">
+            <button
+                class="material-symbols-outlined text-[#004d64] dark:text-[#bee9ff] hover:bg-[#e6e8e9] dark:hover:bg-slate-800 transition-colors p-2 rounded-full active:scale-95 duration-150">menu</button>
+            <h1 class="font-['Manrope'] font-extrabold text-xl text-[#004d64] dark:text-[#bee9ff] tracking-tight">
+                ReceiptSnap</h1>
+        </div>
+        <div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary-fixed shadow-sm">
+            <img class="w-full h-full object-cover"
+                data-alt="professional male headshot with clean lighting and neutral background"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Y51_CQUrp1TRAqKtC2ndef13qkQwgcPAAUvauhIebmuUMjsY31diL6wtnkTHB5FyuynlJ9ejWzNRgqMtVE7V6Hbnd3dy3YZaVKfOJy9phNDn9NkjeQdEc8oPPoRw6m_eHcQNy9XTxKPhi6R4XiAQ5d22P9yzWYl9kN_RrYKP7FedLoUfaMl4a2I1lcXzgmCB4AuLvy3Ru1qzro-LF2sgRnCokMnrlfOfplDUvbGoberIGmHWMhmcAqbpC47kew6LrQO-lwlYq1zg" />
+        </div>
+    </header>
+    <main class="max-w-3xl mx-auto px-6 pb-32 pt-6">
+        <!-- Editorial Header -->
+        <div class="mb-10">
+            <span class="font-label text-xs font-semibold uppercase tracking-[0.15em] text-primary mb-2 block">Archive
+                Overview</span>
+            <h2 class="font-headline text-4xl font-extrabold text-on-surface leading-tight tracking-tight">Batch History
+            </h2>
+            <p class="text-on-secondary-container mt-2 font-body">Review and manage your processed receipt ledgers.</p>
+        </div>
+        <!-- History Content -->
+        <div class="space-y-4">
+            <!-- History Item 1: Exported -->
+            <div
+                class="bg-surface-container-lowest rounded-xl p-5 group hover:shadow-[0_12px_32px_-4px_rgba(0,77,100,0.06)] transition-all duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="space-y-1">
+                        <h3 class="font-headline text-lg font-bold text-on-surface">Weekly Expenses Oct 17-23</h3>
+                        <p class="text-sm text-on-secondary-container flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[18px]">receipt_long</span> 12 Receipts
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-end gap-2">
+                        <span
+                            class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Exported</span>
+                        <span class="text-[11px] font-medium text-outline">Oct 24, 2023</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/15">
+                    <div class="flex -space-x-2">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center border-2 border-surface-container-lowest overflow-hidden">
+                            <img class="w-full h-full object-cover grayscale opacity-60"
+                                data-alt="macro photo of a crumpled white paper receipt with black text"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzfVggaMjzRsVCxSQIlmthFeAfmlwiaWPG4yhlRRHbB14ZnFEWuRUbmAXymHxCz2g2EUrXoXbneNe-0JnW0AFB-AEMDfNpUIwHet9ohkGPDamKZan1LXAM_E0DHVJ7wicKRif6nFLqLvi1AWSbEvzfheW68qNuqEcYLPyiNI9txZKTcROnGlY4fOpTZR-5m6LQZVgvGbjfdkvewZugYvDYELDeI1_bm3aG1MKBcgDoOSVba0WdCNnNZ52BnIYYE-eI41_TibqqKGib" />
+                        </div>
+                        <div
+                            class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center border-2 border-surface-container-lowest">
+                            <span class="text-[10px] font-bold text-on-secondary-container">+9</span>
+                        </div>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary px-4 py-2 rounded-md shadow-sm active:scale-95 transition-all duration-150">
+                        <span class="material-symbols-outlined text-[20px]">download</span>
+                        <span class="font-label text-sm font-semibold">CSV</span>
+                    </button>
+                </div>
+            </div>
+            <!-- History Item 2: Pending -->
+            <div
+                class="bg-surface-container-lowest rounded-xl p-5 group hover:shadow-[0_12px_32px_-4px_rgba(0,77,100,0.06)] transition-all duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="space-y-1">
+                        <h3 class="font-headline text-lg font-bold text-on-surface">Digital Nomad Supplies</h3>
+                        <p class="text-sm text-on-secondary-container flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[18px]">receipt_long</span> 5 Receipts
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-end gap-2">
+                        <span
+                            class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Pending</span>
+                        <span class="text-[11px] font-medium text-outline">In Queue</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/15">
+                    <div class="flex items-center gap-3">
+                        <div class="w-24 h-2 bg-surface-container-high rounded-full overflow-hidden">
+                            <div class="w-[65%] h-full bg-primary transition-all duration-1000"></div>
+                        </div>
+                        <span class="text-[11px] font-bold text-primary">65%</span>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 text-primary font-label text-sm font-semibold px-4 py-2 rounded-md hover:bg-primary-fixed/30 transition-colors">
+                        View Details
+                    </button>
+                </div>
+            </div>
+            <!-- History Item 3: Exported -->
+            <div
+                class="bg-surface-container-lowest rounded-xl p-5 group hover:shadow-[0_12px_32px_-4px_rgba(0,77,100,0.06)] transition-all duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="space-y-1">
+                        <h3 class="font-headline text-lg font-bold text-on-surface">Client Meeting - London</h3>
+                        <p class="text-sm text-on-secondary-container flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[18px]">receipt_long</span> 8 Receipts
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-end gap-2">
+                        <span
+                            class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Exported</span>
+                        <span class="text-[11px] font-medium text-outline">Oct 12, 2023</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/15">
+                    <div class="flex -space-x-2">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center border-2 border-surface-container-lowest overflow-hidden">
+                            <img class="w-full h-full object-cover grayscale opacity-60"
+                                data-alt="close up of a modern tax invoice from a restaurant"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh4pBEQhava3-EGZGginLHoRz7M63sjKKmuvERLou97lVPNApJJYkDcsPzXnXLwg6572Y77sXrg-m0gCl_FZFWAedzNQDec4-KW9kPjffc-cU2jAe25rd7lHlTVWcHopmBnWaYvkisHIVcONJme63dAe5joeLtNITPfo4DgwucspXMR8-evLXa6d3oQATXxcfLmhPTH71ZrpAj3ptFpjTGRHy0yJpXN3PWYlJylqrWA5BmWaYkxcvjLCyfbmfB0TrGnRnFO0kl3sdJ" />
+                        </div>
+                        <div
+                            class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center border-2 border-surface-container-lowest overflow-hidden">
+                            <img class="w-full h-full object-cover grayscale opacity-60"
+                                data-alt="thermal paper receipt with fading print on wooden surface"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFwZy1f17WH96rbM_pOGfmWaXZEf-A63XfWvxQkOaJFIVcejr89hl7s6MfW43HMxlA6q9QQxKH_11DaT9R63ma8SY4ZW-Hv4xGDnqa6unsgP5URBfuwdAL0_7bLfQ6QYyVPKZVerJWfeDFS_v_gps7sna-yy5eavyVo-Ak6saMkUrNyuvrnsspj6B_ewhwrGhfkIHoZ-lczsmlrpY-u4NVunjpoQgfCfTJ69bC5zHwYl-UNhYhCgGTVNc-9x3TLkkuHxP3tc25Y5DB" />
+                        </div>
+                        <div
+                            class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center border-2 border-surface-container-lowest">
+                            <span class="text-[10px] font-bold text-on-secondary-container">+6</span>
+                        </div>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary px-4 py-2 rounded-md shadow-sm active:scale-95 transition-all duration-150">
+                        <span class="material-symbols-outlined text-[20px]">download</span>
+                        <span class="font-label text-sm font-semibold">CSV</span>
+                    </button>
+                </div>
+            </div>
+            <!-- History Item 4: Exported -->
+            <div
+                class="bg-surface-container-lowest rounded-xl p-5 group hover:shadow-[0_12px_32px_-4px_rgba(0,77,100,0.06)] transition-all duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="space-y-1">
+                        <h3 class="font-headline text-lg font-bold text-on-surface">Home Office Refresh</h3>
+                        <p class="text-sm text-on-secondary-container flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[18px]">receipt_long</span> 2 Receipts
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-end gap-2">
+                        <span
+                            class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Exported</span>
+                        <span class="text-[11px] font-medium text-outline">Oct 05, 2023</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-outline-variant/15">
+                    <div class="flex -space-x-2">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center border-2 border-surface-container-lowest overflow-hidden">
+                            <img class="w-full h-full object-cover grayscale opacity-60"
+                                data-alt="modern desk setup with electronics and purchase documentation"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaWLAm9EtVqhKsRJdSOmrc9xSBp9lRrfxzNRa4oVLFdYgnK20TrA_ScBcj3H1onzFjsaDCg07UPMDijBFa_0n2TC3waZJRefWk_b50_0-wd87rbF8msVJ7mTLMDHgZthcwfoSCU2nj4W2dKcP8HuCZZZZSheT1isXmnIeXn-WcssuvI6QIAssStHdGuKFzHhACCxe1QwtpZyVUroOQ0fauBTjGlZ3FYmxIrUc9wQIlm_OskH2dolk0ORy-6GMLTyMfkW9ipYq71Ccq" />
+                        </div>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary px-4 py-2 rounded-md shadow-sm active:scale-95 transition-all duration-150">
+                        <span class="material-symbols-outlined text-[20px]">download</span>
+                        <span class="font-label text-sm font-semibold">CSV</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination Placeholder / Load More -->
+        <div class="mt-8 text-center">
+            <button
+                class="text-primary font-label text-sm font-bold uppercase tracking-widest px-6 py-3 border border-outline-variant/30 rounded-lg hover:bg-surface-container-low transition-colors">
+                Load older batches
+            </button>
+        </div>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl z-50 border-t border-[#bfc8cd]/15 shadow-[0_-12px_32px_-4px_rgba(0,77,100,0.08)]">
+        <a class="flex flex-col items-center justify-center text-[#576670] dark:text-slate-400 px-4 py-1.5 hover:text-[#004d64] transition-all duration-300"
+            href="#">
+            <span class="material-symbols-outlined mb-1">dashboard</span>
+            <span class="font-['Inter'] font-medium text-[11px] tracking-wide uppercase">Dashboard</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#576670] dark:text-slate-400 px-4 py-1.5 hover:text-[#004d64] transition-all duration-300"
+            href="#">
+            <span class="material-symbols-outlined mb-1">add_a_photo</span>
+            <span class="font-['Inter'] font-medium text-[11px] tracking-wide uppercase">Capture</span>
+        </a>
+        <a class="flex flex-col items-center justify-center bg-[#bee9ff] dark:bg-[#006684] text-[#004d64] dark:text-white rounded-xl px-4 py-1.5 transition-all duration-300"
+            href="#">
+            <span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">history</span>
+            <span class="font-['Inter'] font-medium text-[11px] tracking-wide uppercase">History</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-[#576670] dark:text-slate-400 px-4 py-1.5 hover:text-[#004d64] transition-all duration-300"
+            href="#">
+            <span class="material-symbols-outlined mb-1">settings</span>
+            <span class="font-['Inter'] font-medium text-[11px] tracking-wide uppercase">Settings</span>
+        </a>
+    </nav>
+    <!-- Floating Batch Indicator (Success State) -->
+    <div class="fixed bottom-28 right-6">
+        <div
+            class="bg-surface-container-lowest/80 backdrop-blur-xl border border-primary/10 px-4 py-3 rounded-2xl shadow-[0_20px_40px_-8px_rgba(0,77,100,0.12)] flex items-center gap-3">
+            <div
+                class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <div>
+                <p class="text-xs font-bold text-on-surface">Auto-sync active</p>
+                <p class="text-[10px] text-on-secondary-container">Last sync: Just now</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

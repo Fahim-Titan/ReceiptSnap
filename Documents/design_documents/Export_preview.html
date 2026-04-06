@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f5",
+                        "tertiary-fixed": "#9ff2e0",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#576670",
+                        "on-primary-fixed": "#001f2a",
+                        "secondary-container": "#d5e5f1",
+                        "secondary-fixed-dim": "#b9c9d4",
+                        "secondary": "#51606a",
+                        "outline-variant": "#bfc8cd",
+                        "tertiary-fixed-dim": "#83d6c4",
+                        "on-secondary-fixed": "#0e1d26",
+                        "primary-fixed": "#bee9ff",
+                        "outline": "#70787e",
+                        "tertiary-container": "#006a5c",
+                        "tertiary": "#005045",
+                        "primary-container": "#006684",
+                        "background": "#f8fafb",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#3f484d",
+                        "inverse-on-surface": "#eff1f2",
+                        "surface-tint": "#016684",
+                        "surface-dim": "#d8dadb",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-primary-fixed-variant": "#004d64",
+                        "on-tertiary-fixed-variant": "#005046",
+                        "surface-bright": "#f8fafb",
+                        "on-secondary-fixed-variant": "#3a4952",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "on-error": "#ffffff",
+                        "surface": "#f8fafb",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#d5e5f1",
+                        "on-background": "#191c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-container": "#94e7d5",
+                        "surface-container": "#eceeef",
+                        "primary": "#004d64",
+                        "inverse-primary": "#87d0f2",
+                        "surface-container-high": "#e6e8e9",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#87d0f2",
+                        "on-primary-container": "#a2e1ff",
+                        "on-tertiary-fixed": "#00201b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body min-h-screen pb-32">
+    <!-- TopAppBar -->
+    <header class="w-full top-0 z-50 sticky bg-[#f8fafb] dark:bg-slate-900">
+        <div class="flex items-center justify-between px-6 py-4 w-full">
+            <div class="flex items-center gap-4">
+                <button
+                    class="hover:bg-[#e6e8e9] dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 p-2 rounded-full">
+                    <span class="material-symbols-outlined text-[#004d64] dark:text-[#bee9ff]"
+                        data-icon="menu">menu</span>
+                </button>
+                <h1 class="font-['Manrope'] font-extrabold text-xl text-[#004d64] dark:text-[#bee9ff]">ReceiptSnap</h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high ring-2 ring-primary-fixed">
+                    <img alt="User Profile"
+                        data-alt="Professional headshot of a financial manager in a minimalist studio setting with soft lighting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd97H6FPQSsDmUPfKfH2KSJQFpJ_OuWnKpb3Wku-q8dhCUXB_NzIaF9upQAX3PoaUfss0PQcJzo0f91PM1l8DPk2qb4AHEpJs-5QBUQ4_K3jn3YMHYFJS2nJcZJpkeFgXuCYTwQDKSmxGxAo3F9V-OdVPn9nK3P2esBRsLMxtGbY7sPCVHZcpRL_8se53n8LoXXvAW17gekAuQiBGOdh5Hvvfb3jB_Ii4PDmUfPJGJq916r0i8ZViQrs4T-JxoNzxGOTtipbydWOQd" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-5xl mx-auto px-6 pt-8">
+        <!-- Breadcrumb & Title Section -->
+        <div class="mb-10">
+            <div class="flex items-center gap-2 mb-2">
+                <span
+                    class="font-label text-xs font-medium uppercase tracking-[0.1em] text-on-secondary-container opacity-60">Batch
+                    Workflow</span>
+                <span class="material-symbols-outlined text-xs text-outline opacity-40"
+                    data-icon="chevron_right">chevron_right</span>
+                <span class="font-label text-xs font-medium uppercase tracking-[0.1em] text-primary">Export
+                    Preview</span>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <h2 class="font-headline font-extrabold text-4xl tracking-tight text-primary mb-2">Review Export
+                        Data</h2>
+                    <p class="text-on-secondary-container max-w-xl">Verify the extracted information from 12 receipts
+                        before generating your Invoice Ninja CSV ledger.</p>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-4 rounded-xl shadow-[0_12px_32px_-4px_rgba(0,77,100,0.08)] flex items-center gap-6">
+                    <div class="flex flex-col">
+                        <span class="font-label text-[10px] uppercase font-bold text-outline">Batch Total</span>
+                        <span class="font-headline font-bold text-2xl text-primary">$4,281.45</span>
+                    </div>
+                    <div class="w-[1px] h-10 bg-outline-variant/15"></div>
+                    <div class="flex flex-col">
+                        <span class="font-label text-[10px] uppercase font-bold text-outline">Items</span>
+                        <span class="font-headline font-bold text-2xl text-primary">12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bento Grid Export Preview -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- Main Ledger Table - Occupies 3 columns -->
+            <div class="lg:col-span-3 bg-surface-container-low rounded-xl overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse text-left">
+                        <thead>
+                            <tr class="bg-surface-container-high/50">
+                                <th
+                                    class="px-6 py-4 font-label text-[11px] font-bold uppercase tracking-wider text-on-secondary-container">
+                                    Vendor</th>
+                                <th
+                                    class="px-6 py-4 font-label text-[11px] font-bold uppercase tracking-wider text-on-secondary-container">
+                                    Date</th>
+                                <th
+                                    class="px-6 py-4 font-label text-[11px] font-bold uppercase tracking-wider text-on-secondary-container">
+                                    Category</th>
+                                <th
+                                    class="px-6 py-4 font-label text-[11px] font-bold uppercase tracking-wider text-on-secondary-container text-right">
+                                    Amount</th>
+                                <th
+                                    class="px-6 py-4 font-label text-[11px] font-bold uppercase tracking-wider text-on-secondary-container text-right">
+                                    Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant/10">
+                            <!-- Row 1 -->
+                            <tr class="bg-surface-container-lowest hover:bg-primary-fixed/20 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col">
+                                        <span class="font-headline font-bold text-primary">Blue Bottle Coffee</span>
+                                        <span class="text-[10px] text-outline">San Francisco, CA</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-secondary-container">Oct 24, 2023</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-tight">Business
+                                        Meals</span>
+                                </td>
+                                <td class="px-6 py-4 text-right font-headline font-bold text-primary">$18.40</td>
+                                <td class="px-6 py-4 text-right">
+                                    <div class="flex justify-end gap-2">
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors text-primary">
+                                            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+                                        </button>
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-error-container/20 transition-colors text-error">
+                                            <span class="material-symbols-outlined text-lg"
+                                                data-icon="delete">delete</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr class="bg-surface-container-low/30 hover:bg-primary-fixed/20 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col">
+                                        <span class="font-headline font-bold text-primary">Apple Store</span>
+                                        <span class="text-[10px] text-outline">Online Store</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-secondary-container">Oct 22, 2023</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-tight">Hardware</span>
+                                </td>
+                                <td class="px-6 py-4 text-right font-headline font-bold text-primary">$2,499.00</td>
+                                <td class="px-6 py-4 text-right">
+                                    <div class="flex justify-end gap-2">
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors text-primary">
+                                            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+                                        </button>
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-error-container/20 transition-colors text-error">
+                                            <span class="material-symbols-outlined text-lg"
+                                                data-icon="delete">delete</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr class="bg-surface-container-lowest hover:bg-primary-fixed/20 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col">
+                                        <span class="font-headline font-bold text-primary">Lufthansa Airlines</span>
+                                        <span class="text-[10px] text-outline">Flight LH456</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-secondary-container">Oct 21, 2023</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-tight">Travel</span>
+                                </td>
+                                <td class="px-6 py-4 text-right font-headline font-bold text-primary">$1,245.50</td>
+                                <td class="px-6 py-4 text-right">
+                                    <div class="flex justify-end gap-2">
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors text-primary">
+                                            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+                                        </button>
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-error-container/20 transition-colors text-error">
+                                            <span class="material-symbols-outlined text-lg"
+                                                data-icon="delete">delete</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Row 4 -->
+                            <tr class="bg-surface-container-low/30 hover:bg-primary-fixed/20 transition-colors">
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col">
+                                        <span class="font-headline font-bold text-primary">AWS Services</span>
+                                        <span class="text-[10px] text-outline">Oct 2023 Usage</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-on-secondary-container">Oct 19, 2023</td>
+                                <td class="px-6 py-4">
+                                    <span
+                                        class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-tight">Infrastructure</span>
+                                </td>
+                                <td class="px-6 py-4 text-right font-headline font-bold text-primary">$518.55</td>
+                                <td class="px-6 py-4 text-right">
+                                    <div class="flex justify-end gap-2">
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors text-primary">
+                                            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+                                        </button>
+                                        <button
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-error-container/20 transition-colors text-error">
+                                            <span class="material-symbols-outlined text-lg"
+                                                data-icon="delete">delete</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Sidebar Controls -->
+            <div class="flex flex-col gap-6">
+                <!-- Export Card -->
+                <div
+                    class="bg-primary rounded-xl p-6 text-on-primary shadow-lg flex flex-col justify-between min-h-[320px] bg-gradient-to-br from-primary to-primary-container">
+                    <div>
+                        <div class="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-2xl"
+                                data-icon="sim_card_download">sim_card_download</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-xl mb-2">Finalize Batch</h3>
+                        <p class="text-on-primary-container text-sm leading-relaxed mb-8">Download your data in the
+                            optimized CSV format for direct import into Invoice Ninja.</p>
+                    </div>
+                    <button
+                        class="w-full bg-primary-fixed text-on-primary-fixed font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all">
+                        <span>Download CSV</span>
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                </div>
+                <!-- Summary/Status Card -->
+                <div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/10">
+                    <h4 class="font-label text-[11px] font-bold uppercase tracking-widest text-outline mb-4">Export
+                        Status</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-on-secondary-container">Integrity Check</span>
+                            <span class="text-tertiary-container font-bold flex items-center gap-1">
+                                <span class="material-symbols-outlined text-base"
+                                    data-icon="check_circle">check_circle</span>
+                                Passed
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-on-secondary-container">Duplicates</span>
+                            <span class="text-on-surface font-medium">0 Found</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-on-secondary-container">Target</span>
+                            <span class="text-on-surface font-medium">Invoice Ninja</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-outline-variant/10">
+                        <button class="text-primary text-sm font-bold flex items-center gap-2 hover:underline">
+                            <span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+                            Export Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Recent Snapshots Section (Tonal Contrast) -->
+        <div class="mt-12">
+            <h3 class="font-headline font-bold text-xl text-primary mb-6">Original Snapshots</h3>
+            <div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+                <div
+                    class="flex-none w-48 aspect-[3/4] bg-surface-container-high rounded-xl overflow-hidden relative group">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        data-alt="A crumpled restaurant receipt on a wooden table with soft focused background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcaRnZ5sDhlYa8c-vv36xCMEPO77kVMUgdCFXz2vMkRGi8BSTyyD2WZE8LhK2KxblxGTtQJxb2SXpQTbht824FX_n9Hjjk0XiTUxLRUSm0Pc4QFGAdBx_r_RGGCgv9zkrYdh7Gzs5JIO3VOlE9_IQP8B0Azya9_yVh3Q88t4nVEUVQmBgnus5KU6vQ3abkEpzGhAfaunYqvh_9WNyXZjJ484ddiraAcL1rCUsDwSSjav_b3y0HLdXXO9CWDZ5JPG0-nSCL6u-4Ncjn" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-white font-bold text-xs">Blue Bottle</span>
+                        <span class="text-primary-fixed text-[10px]">Oct 24</span>
+                    </div>
+                </div>
+                <div
+                    class="flex-none w-48 aspect-[3/4] bg-surface-container-high rounded-xl overflow-hidden relative group">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        data-alt="Professional computer generated invoice document with clean typography on a white surface"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHRhGGM5kZCxuKfidpSwH7BtnEi0owfzmLlydGSjSX7WeWRKpHJ-aFI7E2zJb4Kc-ObkfuBeGKB0ynlSVcjICVGHNhkfaM4GOvRFD7trCGDoTX4Pe_UG6J_iwkDAKSzIWdh8M6CaZKLRjIhNW1vRQku3LdkDpqzuwC8edbd_OjQtAYrrc-DOcIvT_PubSRGbM0gRNUJIBMDDexLMSwbDMgOxJ5YSdBp0gqFsLqvuLlAoZ66WLgHFS7eWSkNbvrL2UtDjx4wjsmxiJR" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-white font-bold text-xs">Apple Store</span>
+                        <span class="text-primary-fixed text-[10px]">Oct 22</span>
+                    </div>
+                </div>
+                <div
+                    class="flex-none w-48 aspect-[3/4] bg-surface-container-high rounded-xl overflow-hidden relative group">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        data-alt="Close up of a boarding pass with airplane ticket details visible on a blue background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKKjTUtoUqrS621Jte3WbCSAOfvBftNc-ymTiNw7fUSuVro3VL1LpYV4iL2i3QuxXOk9L96Vpp1eeqpeDizb4I51Kg4XOoSW26EHbM8g4iISkAjY-G-1KrkkcnmUjR9qnX6my2r_ykwyXrBaDw_jV_QzqHu6gwIzA-Uu9NY5B7bw3Vc6fsbGe7-3j2_Hw0_1oXFLcVKljF-y8VXBblMV7eWU008CteGwEAXrRmIMAyh_A0p80WMavSvIipc25bA1JDfBDBip3qq3xe" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-white font-bold text-xs">Lufthansa</span>
+                        <span class="text-primary-fixed text-[10px]">Oct 21</span>
+                    </div>
+                </div>
+                <div
+                    class="flex-none w-48 aspect-[3/4] bg-surface-container-high rounded-xl overflow-hidden relative group">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        data-alt="Abstract data visualization on a screen representing cloud computing usage and costs"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOeh0b_Y8gGxRy_QPKa8wvs-kk-pTO1N9fyf2kinIjccxpAaw8MZLlKS9sHs1yCp1ddWZ7RvVO_SpijnoFuMh99vwOPI5wv8mYAIPUXqnGhGTEO58HpWjNKaptJal8iHU9kJpuwN-SIBBSn0zbnpEjBWtah0a5TU0mmVOMxdeHocoREafqGb6706MOVM2VK2didH4mpa6TwqukwIbzzk-NpW8J5hqUpK8nf8hE3NGkKAD90SQcdyLzqQk5OSjWOgoZ7tJlHfOi-BCk" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-white font-bold text-xs">AWS Billing</span>
+                        <span class="text-primary-fixed text-[10px]">Oct 19</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_-12px_32px_-4px_rgba(0,77,100,0.08)]">
+        <div class="flex justify-around items-center px-4 pb-6 pt-3">
+            <a class="flex flex-col items-center justify-center text-[#576670] dark:text-slate-400 px-4 py-1.5 hover:text-[#004d64] transition-all duration-300"
+                href="#">
+                <span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+                <span class="font-['Inter'] font-medium text-[11px] tracking-wide uppercase">Dashboard</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-[#576670] dark:text-slate-400 px-4 py-1.5 hover:text-[#004d64] transition-all duration-300"
+                href="#">
+                <span class="material-symbols-outlined mb-1" data-icon="add_a_photo">add_a_photo</span>
+                <span class="font-['Inter'] font-medium text-[11px] tracking-wide uppercase">Capture</span>
+            </a>
+            <a class="flex flex-col items-center justify-center bg-[#bee9ff] dark:bg-[#006684] text-[#004d64] dark:text-white rounded-xl px-4 py-1.5 transition-all duration-300"
+                href="#">
+                <span class="material-symbols-outlined mb-1" data-icon="history"
+                    style="font-variation-settings: 'FILL' 1;">history</span>
+                <span class="font-['Inter'] font-medium text-[11px] tracking-wide uppercase">History</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-[#576670] dark:text-slate-400 px-4 py-1.5 hover:text-[#004d64] transition-all duration-300"
+                href="#">
+                <span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+                <span class="font-['Inter'] font-medium text-[11px] tracking-wide uppercase">Settings</span>
+            </a>
+        </div>
+    </nav>
+    <!-- Contextual Glassmorphic Workflow Overlay (Only visible during processing) -->
+    <div
+        class="hidden fixed bottom-24 left-1/2 -translate-x-1/2 glass-effect bg-surface-container-lowest/80 border border-outline-variant/20 rounded-full px-6 py-3 items-center gap-4 shadow-2xl z-[60]">
+        <div class="w-4 h-4 rounded-full border-2 border-primary border-t-transparent animate-spin"></div>
+        <span class="text-sm font-bold text-primary">Generating CSV...</span>
+    </div>
+</body>
+
+</html>
