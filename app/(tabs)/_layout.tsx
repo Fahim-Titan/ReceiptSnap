@@ -6,12 +6,13 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Label } from '@/src/components/Typography';
 
-type NavKey = 'batch_history' | 'capture' | 'settings';
+type NavKey = 'batch_history' | 'capture' | 'export_preview' | 'settings';
 
 const NAV_ITEMS: { key: NavKey; label: string; icon: keyof typeof MaterialIcons.glyphMap }[] = [
-  { key: 'batch_history', label: 'History',  icon: 'history' },
-  { key: 'capture',       label: 'Capture',  icon: 'add-a-photo' },
-  { key: 'settings',      label: 'Settings', icon: 'settings' },
+  { key: 'batch_history',  label: 'History',  icon: 'history' },
+  { key: 'capture',        label: 'Capture',  icon: 'add-a-photo' },
+  { key: 'export_preview', label: 'Export',   icon: 'table-view' },
+  { key: 'settings',       label: 'Settings', icon: 'settings' },
 ];
 
 function CustomTabBar({ state, navigation }: BottomTabBarProps) {
@@ -19,10 +20,8 @@ function CustomTabBar({ state, navigation }: BottomTabBarProps) {
   const activeRouteName = state.routes[state.index]?.name as NavKey;
 
   const handlePress = (key: NavKey) => {
-    if (key === 'capture') {
-      router.push('/capture');
-      return;
-    }
+    if (key === 'capture') { router.push('/capture'); return; }
+    if (key === 'export_preview') { router.push('/export_preview'); return; }
     const tabIndex = state.routes.findIndex((r) => r.name === key);
     if (tabIndex !== -1) {
       navigation.navigate(state.routes[tabIndex].name);

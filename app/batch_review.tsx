@@ -278,12 +278,14 @@ export default function BatchReviewScreen() {
 
         <BottomNavBar
           items={[
-            { key: 'batch_history', label: 'History',  icon: 'history',    isActive: false },
-            { key: 'capture',       label: 'Capture',  icon: 'add-a-photo', isActive: true },
-            { key: 'settings',      label: 'Settings', icon: 'settings',    isActive: false },
+            { key: 'batch_history',  label: 'History',  icon: 'history',     isActive: false },
+            { key: 'capture',        label: 'Capture',  icon: 'add-a-photo', isActive: true },
+            { key: 'export_preview', label: 'Export',   icon: 'table-view',  isActive: false },
+            { key: 'settings',       label: 'Settings', icon: 'settings',    isActive: false },
           ]}
           onSelect={(key) => {
             if (key === 'capture') { router.push('/capture'); return; }
+            if (key === 'export_preview') { router.push('/export_preview'); return; }
             if (key === 'settings') { router.push('/(tabs)/settings'); return; }
             router.push('/(tabs)/batch_history');
           }}
