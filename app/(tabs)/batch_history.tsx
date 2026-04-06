@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, View, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { router } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Headline, Body, Label } from '@/src/components/Typography';
 import { Card } from '@/src/components/Card';
@@ -132,7 +133,7 @@ function BatchCard({ item }: { item: BatchItem }) {
                 {item.progress}%
               </Label>
             </View>
-            <Button label="View Details" variant="tertiary" />
+            <Button label="View Details" variant="tertiary" onPress={() => router.push('/export_preview')} />
           </>
         )}
       </View>

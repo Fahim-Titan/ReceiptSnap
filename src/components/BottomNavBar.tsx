@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable, Platform } from 'react-native';
+import { View, Pressable } from 'react-native';
 import { Label } from './Typography';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -16,39 +16,26 @@ export interface BottomNavBarProps {
   className?: string;
 }
 
-export const BottomNavBar = ({
-  items,
-  onSelect,
-  className = '',
-}: BottomNavBarProps) => {
+const ACTIVE_COLOR   = '#004d64'; // primary
+const INACTIVE_COLOR = '#576670'; // on-secondary-container
+
+export const BottomNavBar = ({ items, onSelect, className = '' }: BottomNavBarProps) => {
   return (
-    <View 
-      className={`absolute bottom-0 left-0 right-0 z-50 flex-row justify-around items-center px-4 pb-6 pt-3 border-t border-outline-variant/15 shadow-[0_-12px_32px_-4px_rgba(0,77,100,0.08)] bg-surface/90 dark:bg-slate-900/90 ${className}`}
-      // Normally glassmorphism would use expo-blur, but via tailwind background opacity is a solid fallback for Expo web handling.
+    <View
+      className={`absolute bottom-0 left-0 right-0 z-50 flex-row justify-around items-center px-4 pb-6 pt-3 bg-surface-container-lowest/90 border-t border-outline-variant/15 shadow-[0_-12px_32px_-4px_rgba(0,77,100,0.08)] ${className}`}
     >
       {items.map((item) => {
-        const activeContainerStyles = item.isActive
-          ? 'bg-primary-fixed dark:bg-primary-container rounded-xl'
-          : 'bg-transparent';
-          
-        const activeTextStyles = item.isActive
-          ? 'text-primary dark:text-white'
-          : 'text-on-secondary-container dark:text-slate-400';
+        const iconColor  = item.isActive ? ACTIVE_COLOR : INACTIVE_COLOR;
+        const labelColor = item.isActive ? 'text-primary' : 'text-on-secondary-container';
 
         return (
           <Pressable
             key={item.key}
             onPress={() => onSelect(item.key)}
-            className={`flex-col items-center justify-center px-4 py-1.5 transition-all duration-300 ${activeContainerStyles}`}
+            className={`flex-col items-center justify-center px-4 py-1.5 rounded-xl ${item.isActive ? 'bg-primary-fixed' : ''}`}
           >
-            <MaterialIcons 
-              name={item.icon} 
-              size={24} 
-              className={`mb-1 ${activeTextStyles}`}
-              color="currentColor" 
-              style={{color: 'inherit'}}
-            />
-            <Label size="sm" color={activeTextStyles} className="text-[11px] tracking-wide uppercase font-medium">
+            <MaterialIcons name={item.icon} size={24} color={iconColor} />
+            <Label size="sm" color={labelColor} className="text-[11px] tracking-wide uppercase font-medium mt-1">
               {item.label}
             </Label>
           </Pressable>
